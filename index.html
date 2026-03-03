@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Princess Soberano Dayag | Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Princess Soberano Dayag — BSIT student and aspiring Web Developer." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --card:#f9fafb;
+      --accent:#111827;
+      --shadow: 0 10px 25px rgba(17,24,39,.08);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{
+      width:min(1020px, 92vw);
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 0 10px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-0.02em;
+    }
+    .brand p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .top-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      font-size:14px;
+      color:var(--text);
+      box-shadow: 0 1px 0 rgba(17,24,39,.04);
+      transition:.15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow)}
+    nav{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .nav-inner{
+      width:min(1020px, 92vw);
+      margin:0 auto;
+      display:flex;
+      gap:14px;
+      padding:10px 0;
+      overflow:auto;
+    }
+    .nav-inner a{
+      font-size:14px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .nav-inner a:hover{
+      background:var(--card);
+      color:var(--text);
+    }
+    .hero{
+      padding:26px 0 6px;
+    }
+    .hero h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-0.01em;
+    }
+    .hero p{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1.15fr .85fr;}
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-0.01em;
+    }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill{
+      font-size:13px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+    }
+    section{
+      padding-top:26px;
+      scroll-margin-top:70px;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 0;
+      border-bottom:1px solid var(--line);
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:18px;
+    }
+    .muted{color:var(--muted)}
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    @media (min-width: 860px){
+      .projects{grid-template-columns: 1fr 1fr;}
+    }
+    .project{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .project h4{margin:0 0 8px; font-size:16px}
+    .project p{margin:0; color:var(--muted)}
+    .project .meta{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .small-link{color:var(--muted); text-decoration:underline; text-underline-offset:3px}
+  </style>
+</head>
+<body>
 
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Princess Soberano Dayag</h1>
+        <p>Web Developer • BSIT (3rd Year) • Panpacific University • Expected Graduation: Oct 2026</p>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn" href="#contact" title="Contact">
+          ✉️ Contact
+        </a>
+        <!-- Optional: add your GitHub link later -->
+        <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">
+          🧑‍💻 GitHub
+        </a>
+      </div>
+    </header>
+
+    <div class="hero" id="about">
+      <h2>Hi! I’m Princess — an aspiring Web Developer.</h2>
+      <p>
+        I’m a third-year BSIT student who enjoys building clean and functional web applications.
+        I have experience with Laravel + MySQL projects, and I’m continuously improving my skills in front-end and back-end development.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Quick Summary</h3>
+          <ul class="list">
+            <li>Interested in: Web Development (Laravel/PHP), database integration, and building user-friendly systems</li>
+            <li>Strengths: problem-solving, teamwork, time management, attention to detail</li>
+            <li>Location: Sobol, Asingan, Pangasinan</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Career Objective</h3>
+          <p class="muted" style="margin:0;">
+            Motivated and detail-oriented BSIT student seeking a Web Developer role. Eager to apply my skills in
+            web development, database management, and system design while learning and contributing in a professional environment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span class="muted">Technical + Tools</span>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Programming & Web</h3>
+          <div class="pill-wrap">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">PHP</span>
+            <span class="pill">SQL</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Frameworks, Database & Tools</h3>
+          <div class="pill-wrap">
+            <span class="pill">Laravel</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">phpMyAdmin</span>
+            <span class="pill">XAMPP</span>
+            <span class="pill">Visual Studio Code</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">Android Studio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span class="muted">Student Projects</span>
+      </div>
+
+      <div class="projects">
+        <div class="project">
+          <h4>Web-Based Procurement Tracking System (Laravel + MySQL)</h4>
+          <p>
+            Developed a role-based procurement tracking system that manages requests, approvals, and organized data storage.
+            Helped implement backend logic, database integration, and user role workflows.
+          </p>
+          <div class="meta">
+            <span class="pill">Laravel</span>
+            <span class="pill">PHP</span>
+            <span class="pill">MySQL</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Attendance Tracker Mobile Application (Android Studio)</h4>
+          <p>
+            Built a simple attendance tracker app with user-friendly screens and organized record handling.
+            Focused on basic input validation and clean interface flow.
+          </p>
+          <div class="meta">
+            <span class="pill">Android Studio</span>
+            <span class="pill">Java</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px;">
+        Tip: If you have screenshots or demo videos, you can add them here later.
+      </p>
+    </section>
+
+    <section id="certifications">
+      <div class="section-title">
+        <h2>Certifications</h2>
+        <span class="muted">Completed Trainings</span>
+      </div>
+
+      <div class="card">
+        <ul class="list">
+          <li>Microsoft Office Specialist Word Associate (Microsoft 365 App)</li>
+          <li>Python Essentials 2 – Cisco Networking Academy</li>
+          <li>Cisco IT Essentials – Cisco Networking Academy</li>
+          <li>Networking Basics – Cisco Networking Academy</li>
+          <li>English for IT 1 – Cisco Networking Academy</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="muted">Let’s connect</span>
+      </div>
+
+      <div class="card">
+        <p style="margin:0 0 10px;" class="muted">
+          You can reach me through the following:
+        </p>
+        <ul class="list">
+          <li><strong>Email:</strong> <a class="small-link" href="mailto:princessdayag@gmail.com">princessdayag@gmail.com</a></li>
+          <li><strong>Phone:</strong> 0946-730-90144</li>
+          <li><strong>Location:</strong> Sobol, Asingan, Pangasinan</li>
+        </ul>
+        <p class="muted" style="margin:12px 0 0;">
+          Optional: add your GitHub profile link in the top-right button once your username is final.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Princess Soberano Dayag</div>
+      <div class="muted">Built with GitHub Pages</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
